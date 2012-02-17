@@ -1,6 +1,6 @@
 /**
  * jquery.checkList.
- * Object search plugin.
+ * Multiple checkbox handler.
  *
  * Copyright (c) 2012 Jensen Tonne
  * www.jstonne.com
