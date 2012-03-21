@@ -38,11 +38,24 @@ $.fn.checkList = function(options) {
 
 		disableChangeEvent = false;
 
+
 	var change = function() {
+
 		if (!disableChangeEvent) {
-			options.change.call(checkList,
-					            checkboxes.filter(':checked'),
-					            checkboxes.not(':checked'));
+
+			var checked = checkboxes.filter(':checked'),
+				unchecked = checkboxes.not(':checked');
+
+			if (checked.length < 1) {
+
+				masterCheckbox.removeAttr("checked");
+			}
+
+			if (checked.length == checkboxes.length) {
+				masterCheckbox.attr("checked", true);
+			}
+
+			options.change.call(checkList, checked, unchecked);
 		}
 	}
 
@@ -70,7 +83,7 @@ $.fn.checkList = function(options) {
 
 			checkboxes.checked(true);
 
-			disableChange = false;
+			disableChangeEvent = false;
 
 			change();
 		},
