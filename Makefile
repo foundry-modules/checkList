@@ -1,11 +1,5 @@
-include ../../build/modules.mk
+all: modularize minify
+
+include ../../build/module.single.mk
 
 MODULE = checkList
-FILENAME = ${MODULE}.js
-SOURCE = ${SOURCE_DIR}/jquery.${MODULE}.js
-PRODUCTION = ${PRODUCTION_DIR}/${FILENAME}
-DEVELOPMENT = ${DEVELOPMENT_DIR}/${FILENAME}
-
-all:
-	${MODULARIZE} -n "${MODULE}" ${SOURCE} > ${DEVELOPMENT}
-	${UGLIFYJS} ${DEVELOPMENT} > ${PRODUCTION}
