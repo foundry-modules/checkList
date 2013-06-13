@@ -1,5 +1,5 @@
 all: modularize minify
 
-include ../../build/module.single.mk
+include ../../build/modules.mk
 
 MODULE = checkList
