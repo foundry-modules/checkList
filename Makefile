@@ -1,4 +1,4 @@
-all: modularize minify
+all: modularize-script minify-script
 
 include ../../build/modules.mk
 
