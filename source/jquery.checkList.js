@@ -52,7 +52,7 @@ $.fn.checkList = function(options) {
 			}
 
 			if (checked.length == checkboxes.length) {
-				masterCheckbox.attr("checked", true);
+				masterCheckbox.prop("checked", true);
 			}
 
 			options.change.call(checkList, checked, unchecked);
@@ -100,6 +100,8 @@ $.fn.checkList = function(options) {
 			change();
 		}
 	);
+
+	change();
 
 	return this;
 }
